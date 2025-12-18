@@ -1,0 +1,127 @@
+/* ======== ОБЩИЕ СТИЛИ (Mobile First) ======== */
+body {
+    background: #d6dbdc;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header, nav, main, footer {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* ---------- HEADER ---------- */
+header {
+    background: #b3d9ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#logo img {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+}
+
+#site-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* ---------- NAVIGATION ---------- */
+nav {
+    background: #99ccff;
+    display: flex;
+    flex-direction: column; /* мобильная версия — вертикальное меню */
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    background: #e6f0ff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+nav a:hover {
+    background: #cce0ff;
+}
+
+/* ---------- MAIN CONTENT ---------- */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+}
+
+/* порядок блоков для мобильных */
+#table-block { order: 1; }
+#links-block { order: 2; }
+#form-block { order: 3; }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+th, td {
+    border: 1px solid #000;
+    padding: 5px;
+    text-align: left;
+}
+
+th {
+    background: #e6f0ff;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    background: #99ccff;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* ======== TABLETS & DESKTOPS ======== */
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    #site-name {
+        margin: 0 20px;
+        font-size: 26px;
+    }
+
+    nav {
+        flex-direction: row; /* горизонтальное меню */
+        justify-content: flex-end;
+    }
+
+    main {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    /* сброс порядка */
+    #table-block { order: 0; }
+    #links-block { order: 0; }
+    #form-block { order: 0; }
+}
